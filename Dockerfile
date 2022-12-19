@@ -7,6 +7,7 @@ RUN apt install bash-completion software-properties-common sudo curl ssh git ope
 
 RUN add-apt-repository ppa:oisf/suricata-stable
 RUN apt install suricata python3 python3-pip -y
+RUN suricata-update 
 
 COPY .bashrc /root/.bashrc
 
