@@ -5,6 +5,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update -y 
 RUN apt install bash-completion software-properties-common sudo curl ssh git openjdk-8-jre nodejs npm grunt -y
 
+RUN add-apt-repository ppa:oisf/suricata-stable
+RUN apt install suricata python3 python3-pip -y
+
 COPY .bashrc /root/.bashrc
 
 COPY OpenDaylight_Lithium /root/OpenDaylight_Lithium
